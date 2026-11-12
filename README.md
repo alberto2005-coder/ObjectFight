@@ -1,88 +1,159 @@
-# ObjectFight 🧱🚀
+# ObjectFight
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Java](https://img.shields.io/badge/Java-Swing-blue.svg)](https://www.java.com/)
+[![Java](https://img.shields.io/badge/Java-8%2B-ED8B00?logo=openjdk&logoColor=white)](https://www.java.com/)
+[![Swing](https://img.shields.io/badge/UI-Java%20Swing-5382A1)](https://docs.oracle.com/javase/tutorial/uiswing/)
+[![MIT](https://img.shields.io/badge/Licencia-MIT-green)](LICENSE)
 
-[🇪🇸 Español](#-español) | [🇬🇧 English](#-english)
+[Español](#español) · [English](#english)
 
 ---
 
-## 🇪🇸 Español
+## Español
 
-### 📖 Índice
-1. [Acerca del Proyecto](#acerca-del-proyecto)
-2. [Características principales](#características-principales)
-3. [Requisitos](#requisitos)
-4. [Instalación y Ejecución](#instalación-y-ejecución)
-5. [Licencia](#licencia)
+### Índice
 
-### Acerca del Proyecto
-**ObjectFight** es un juego arcade desarrollado en **Java Swing**. En este divertido título, el jugador controla una plataforma (Player) para hacer rebotar una pelota (Ball) y destruir los muros (Walls) en pantalla a través de diversas fases. ¡Pon a prueba tus reflejos, gestiona tus vidas y supera todos los niveles para alcanzar la victoria!
+- [Descripción](#descripción)
+- [Características](#características)
+- [Controles](#controles)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Requisitos](#requisitos)
+- [Compilación y ejecución](#compilación-y-ejecución)
+- [Licencia](#licencia)
 
-### Características principales
-*   **Físicas de colisión**: Implementación de colisiones rectangulares entre los distintos objetos del juego (Pelota, Jugador, Muros).
-*   **Sistema de fases**: Supera las 5 fases de dificultad creciente destruyendo todos los muros de la zona de juego.
-*   **Puntuación y Vidas**: Gana puntos por cada muro destruido. ¡Pero cuidado! Si la pelota toca el suelo, perderás una de tus 3 vidas.
-*   **Controles fluidos**: Movimiento suave de la plataforma usando las flechas direccionales o las teclas A/D.
-*   **Interfaz Gráfica (GUI)**: Pantalla de menú principal, renderizado en tiempo real y Game Over / Victory screens usando la API gráfica estándar de Java.
+### Descripción
+
+**ObjectFight** es un arcade estilo *breakout* escrito en **Java Swing**. Controlas una plataforma para hacer rebotar una pelota y destruir todos los muros de la pantalla, fase tras fase, sin quedarte sin vidas.
+
+### Características
+
+- **Físicas de colisión** rectangulares entre pelota, plataforma y muros.
+- **Cinco fases** de dificultad creciente: hay que limpiar todos los muros para pasar.
+- **Puntuación y vidas**: cada muro suma puntos y cada caída de la pelota cuesta una de las tres vidas.
+- **Movimiento fluido** con flechas o A/D.
+- **Interfaz completa**: menú principal, partida en tiempo real y pantallas de derrota y victoria.
+
+### Controles
+
+| Tecla | Acción |
+|---|---|
+| `←` / `A` | Mover la plataforma a la izquierda |
+| `→` / `D` | Mover la plataforma a la derecha |
+| `Esc` | Volver al menú (según pantalla) |
+
+### Estructura del proyecto
+
+```text
+ObjectFight/
+├── src/main/java/com/xanxa/objectfight/
+│   ├── Main.java               # Punto de entrada
+│   ├── logic/
+│   │   ├── GameManager.java    # Estados, puntuación y fases
+│   │   ├── Collider.java       # Interfaz de colisión
+│   │   └── RectangleCollider.java
+│   ├── model/
+│   │   ├── GameObject.java     # Base de los objetos del juego
+│   │   ├── Ball.java · Player.java · Wall.java
+│   └── view/
+│       ├── GameWindow.java     # Ventana principal
+│       ├── GameCanvas.java     # Render en tiempo real
+│       └── MainMenu.java
+├── Manifest.txt
+├── LICENSE
+└── README.md
+```
 
 ### Requisitos
-*   **Java Development Kit (JDK)**: Versión 8 o superior.
-*   Entorno de desarrollo (IDE) como Eclipse, IntelliJ IDEA, VS Code, o simplemente terminal.
 
-### Instalación y Ejecución
-1.  **Clona este repositorio**:
-    ```bash
-    git clone https://github.com/TU_USUARIO/ObjectFight.git
-    cd ObjectFight
-    ```
-2.  **Compilación y Ejecución (vía terminal)**:
-    ```bash
-    javac -d bin src/main/java/com/xanxa/objectfight/**/*.java
-    java -cp bin com.xanxa.objectfight.Main
-    ```
-    *Alternativamente, puedes importar el proyecto en tu IDE favorito y ejecutar la clase `Main.java`.*
+- **JDK 8 o superior**.
+- Un IDE (IntelliJ IDEA, Eclipse, VS Code) o simplemente un terminal.
+
+### Compilación y ejecución
+
+```bash
+git clone https://github.com/alberto2005-coder/ObjectFight.git
+cd ObjectFight
+javac -d bin src/main/java/com/xanxa/objectfight/**/*.java
+java -cp bin com.xanxa.objectfight.Main
+```
+
+En PowerShell, si el comodín `**` no se expande, compila indicando los paquetes o importa el proyecto en tu IDE y ejecuta `Main.java`.
 
 ### Licencia
-Este proyecto está bajo la Licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+**MIT** — consulta [LICENSE](LICENSE).
 
 ---
 
-## 🇬🇧 English
+## English
 
-### 📖 Table of Contents
-1. [About the Project](#about-the-project)
-2. [Key Features](#key-features)
-3. [Requirements](#requirements)
-4. [Installation and Execution](#installation-and-execution)
-5. [License](#license-1)
+### Table of contents
 
-### About the Project
-**ObjectFight** is an arcade game developed using **Java Swing**. In this fun title, the player controls a paddle (Player) to bounce a ball (Ball) and destroy all the walls (Walls) on the screen across various phases. Test your reflexes, manage your lives, and beat all levels to achieve victory!
+- [Overview](#overview)
+- [Features](#features)
+- [Controls](#controls)
+- [Project structure](#project-structure)
+- [Requirements](#requirements)
+- [Build and run](#build-and-run)
+- [License](#license)
 
-### Key Features
-*   **Collision Physics**: Implementation of rectangular collisions between the different game objects (Ball, Player, Walls).
-*   **Phase System**: Beat the 5 phases of increasing difficulty by destroying all the walls in the game zone.
-*   **Score & Lives**: Earn points for every destroyed wall. But be careful! If the ball hits the floor, you'll lose one of your 3 lives.
-*   **Fluid Controls**: Smooth paddle movement using directional arrows or A/D keys.
-*   **Graphical Interface (GUI)**: Main menu screen, real-time rendering, and Game Over / Victory screens using standard Java Graphics API.
+### Overview
+
+**ObjectFight** is a *breakout*-style arcade game written in **Java Swing**. You control a paddle to bounce a ball and destroy every wall on screen, level after level, without running out of lives.
+
+### Features
+
+- Rectangular **collision physics** between ball, paddle and walls.
+- **Five phases** of increasing difficulty: clear every wall to advance.
+- **Score and lives**: each wall scores points and each ball drop costs one of your three lives.
+- **Smooth movement** with the arrow keys or A/D.
+- **Complete interface**: main menu, real-time gameplay and game-over/victory screens.
+
+### Controls
+
+| Key | Action |
+|---|---|
+| `←` / `A` | Move the paddle left |
+| `→` / `D` | Move the paddle right |
+| `Esc` | Back to the menu (depending on the screen) |
+
+### Project structure
+
+```text
+ObjectFight/
+├── src/main/java/com/xanxa/objectfight/
+│   ├── Main.java               # Entry point
+│   ├── logic/
+│   │   ├── GameManager.java    # States, score and phases
+│   │   ├── Collider.java       # Collision interface
+│   │   └── RectangleCollider.java
+│   ├── model/
+│   │   ├── GameObject.java     # Base game object
+│   │   ├── Ball.java · Player.java · Wall.java
+│   └── view/
+│       ├── GameWindow.java     # Main window
+│       ├── GameCanvas.java     # Real-time rendering
+│       └── MainMenu.java
+├── Manifest.txt
+├── LICENSE
+└── README.md
+```
 
 ### Requirements
-*   **Java Development Kit (JDK)**: Version 8 or higher.
-*   Development environment (IDE) like Eclipse, IntelliJ IDEA, VS Code, or just a terminal.
 
-### Installation and Execution
-1.  **Clone this repository**:
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/ObjectFight.git
-    cd ObjectFight
-    ```
-2.  **Compilation and Execution (via terminal)**:
-    ```bash
-    javac -d bin src/main/java/com/xanxa/objectfight/**/*.java
-    java -cp bin com.xanxa.objectfight.Main
-    ```
-    *Alternatively, you can import the project into your favorite IDE and run the `Main.java` class.*
+- **JDK 8 or later**.
+- An IDE (IntelliJ IDEA, Eclipse, VS Code) or just a terminal.
+
+### Build and run
+
+```bash
+git clone https://github.com/alberto2005-coder/ObjectFight.git
+cd ObjectFight
+javac -d bin src/main/java/com/xanxa/objectfight/**/*.java
+java -cp bin com.xanxa.objectfight.Main
+```
+
+On PowerShell, if `**` is not expanded, compile per package or import the project into your IDE and run `Main.java`.
 
 ### License
-This project is licensed under the **MIT** License. See the [LICENSE](LICENSE) file for more information.
+
+**MIT** — see [LICENSE](LICENSE).
